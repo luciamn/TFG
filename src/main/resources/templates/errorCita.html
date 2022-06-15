@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="http://fonts.cdnfonts.com/css/with-my-woes" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+
+<!--Peronal Carrousel-->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'><link rel="stylesheet" href="./personal.css">
+
+<!--galeria inicio-->
+
+<link rel="stylesheet" href="galeriaInicio.css">
+
+
+
+
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+        body{
+            background-color: #1a1a1a;
+        }
+
+        header.masthead {
+        background: #1a1a1a;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+ header.masthead h1, header.masthead .h1 {
+    font-size: 2.25rem;
+}
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+#ovejaimg{
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    width: 10%;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images/pageLoader.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+
+#pageloader-overlay {
+            opacity: 0;
+            top: 0px;
+            left: 0px;
+            position: fixed;
+            background-color: rgba(255, 255, 255);
+            height: 100%;
+            width: 100%;
+            z-index: 9998;
+            -webkit-transition: opacity 0.5s linear;
+            -moz-transition: opacity 0.5s linear;
+            transition: opacity 0.5s linear;
+        }
+
+        #pageloader-overlay.visible {
+            opacity: 1;
+        }
+
+        #pageloader-overlay.hidden {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            z-index: -10000;
+        }
+
+        #pageloader-overlay .loader-wrapper-outer {
+            background-color: transparent;
+            z-index: 9999;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: table;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #pageloader-overlay .loader-wrapper-inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #o{
+            font-family: 'Square Peg', cursive;
+            font-size: 40px;
+            line-height: 30px;
+            color: whitesmoke;
+        }
+ #map {
+	height: 500px;
+	width: 100%;
+}
+
+
+h1{
+    font-family: 'Square Peg', cursive;
+            font-size: 40px;
+            line-height: 30px;
+            color: whitesmoke;
+}
+
+
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+ion-icon{
+    position: relative;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+
+.side-bar{
+          background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(15px);
+           width: 390px;
+           height: 100vh;
+           position: fixed;
+           top: 0;
+           right: -100%;
+           overflow-y: auto;
+           transition: 0.6s ease;
+           transition-property: right;
+           z-index: 1;
+        }
+
+        .side-bar .menu{
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        .side-bar .menu .item{
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .side-bar .menu .item a{
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            padding: 5px 30px;
+            line-height: 60px;
+
+        }
+
+        .side-bar .menu .item a:hover{
+            background: #8621F8;
+            transition: 0.3s ease;
+        }
+
+        .close-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            right: 0;
+            margin: 25px;
+            margin-right: 90%;
+            cursor: pointer;
+        }
+
+        .menu-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            margin: 25px;
+            cursor: pointer;
+            margin-left: 88%;
+        }
+
+        .side-bar.active{
+            right: 0;
+        }
+
+        @media screen and (min-width: 1580px){
+            .menu-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            margin: 25px;
+            cursor: pointer;
+            margin-left: 96%;
+        }
+          }
+
+
+          #alert{
+            text-align: center;
+            margin-top: 10%;
+
+          }
+
+          footer{
+            margin-top: -25%;
+          }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="pageloader-overlay" class="visible incoming">
+        <div class="loader-wrapper-outer">
+            <div class="loader-wrapper-inner">
+                <div class="text-center new-loading-modal">
+                    <img id="ovejaimg" src="oveja_negra.webp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <header class="masthead">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center d-flex">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                                                                            <div class="container-fluid">
+                                                                              <p id="o">OVEJA NEGRA</p>
+                                                                                <div class="menu-btn">
+                                                                                    <i class="fas fa-bars"></i>
+                                                                                </div>
+
+                                                                               <div class="side-bar">
+                                                                                <div class="close-btn">
+                                                                                    <i class="fas fa-times"> </i>
+                                                                                </div>
+                                                                                   <div class="menu">
+                                                                                       <div class="item"><a th:href="@{/}">Home</i></a></div>
+                                                                                           <div class="item"><a th:href="@{/cliente}">Registro</i></a></div>
+                                                                                           <div class="item"><a th:href="@{/chat}">Chat Global</i></a></div>
+                                                                                           <div class="item"><a th:href="@{/galeria}">Galeria de Tatuajes</i></a></div>
+                                                                                           <div class="item"><a th:href="@{/estudio}">El estudio</i></a></div>
+                                                                                            <div class="item"><a th:href="@{/auth/cita}">Pedir Cita</i></a></div>
+                                                                                            <div class="item"><a th:href="@{/public/tienda}">Tienda</i></a></div>
+                                                                                   </div>
+                                                                               </div>
+
+
+
+
+                                                                              </div>
+                                                                            </div>
+                                                                          </nav>
+                      </div>
+
+                      <section >
+                        <div class="container" id="alert">
+                            <div class="alert alert-danger" role="alert">
+                                No se puede agendar su cita, otro cliente tiene esa fecha
+                              </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </header>
+
+
+
+        </section>
+
+    <!-- Footer -->
+ <footer class="bg-transparent text-center text-white">
+             <hr>
+               <!-- Grid container -->
+               <div class="container p-4">
+                 <!-- Section: Social media -->
+
+                 <!-- Section: Text -->
+
+                 <!-- Section: Links -->
+                 <section class="">
+                   <!--Grid row-->
+                   <div class="row">
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Horario</h5>
+                       <p>
+                        Lunes - Viernes <br>
+                        09:30h - 19:00h <br>
+                       </p>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Oveja Negra</h5>
+                       <p>
+                        Estudio de Tatuajes en Madrid <br>
+
+                        San Blas, Madrid
+                       </p>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Acceso rapido</h5>
+
+                       <ul class="list-unstyled mb-0">
+                         <li>
+                           <a th:href="@{/galeria}" class="text-white">Galeria de Tatuajes</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/cliente}" class="text-white">Registro</a>
+                         </li>
+
+                         <li>
+                           <a th:href="@{/auth/cita}" class="text-white">Pedir Cita</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/estudio}" class="text-white">El Estudio</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/public/tienda}" class="text-white">Tienda</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/chat}" class="text-white">Chat Global</a>
+                         </li>
+                       </ul>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Contacto</h5>
+
+                       <ul class="list-unstyled mb-0">
+                         <li>
+                           <a href="mailto:oveja.negra.sl.22@gmail.com" class="text-white">@OvejaNegra</a>
+                         </li>
+                       </ul>
+                     </div>
+                     <!--Grid column-->
+                   </div>
+                   <!--Grid row-->
+                 </section>
+                 <!-- Section: Links -->
+               </div>
+               <!-- Grid container -->
+
+               <!-- Copyright -->
+               <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                 © 2020 Copyright:
+                 <a class="text-white"></a>
+               </div>
+               <!-- Copyright -->
+             </footer>
+
+
+      <!--personal js-->
+      <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./personal.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).on("ready",function(){
+            $(window).on('load', function(){
+                $('#pageloader-overlay').fadeOut(2000);
+            });
+        });
+        </script>
+
+        <script>
+           function initMap(){
+    var coordenadas = {lat: 40.421932 ,lng: -3.616656};
+    var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 10,
+      center: coordenadas
+    });
+    var marker = new google.maps.Marker({
+      position: coordenadas,
+      map: map
+    });
+}
+
+        </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA37KIg2Fg69FrcOhyFDJVn5Qr8Vet-58&callback=initMap"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+    $('.menu-btn').click(function(){
+        $('.side-bar').addClass('active');
+        $('.menu-btn').css("visibility", "hidden");
+    });
+
+    $('.close-btn').click(function(){
+        $('.side-bar').removeClass('active');
+        $('.menu-btn').css("visibility", "visible");
+    });
+
+
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/estudio.css">
+
+    <link href="http://fonts.cdnfonts.com/css/with-my-woes" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    <title>El Estudio ON</title>
+
+    <style>
+
+      .navbar-brand{
+        font-family: "With My Woes", Sans-serif;
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      h1{
+        font-family: "With My Woes", Sans-serif;
+        font-size: 25px;
+        line-height: 30px;
+        color: whitesmoke;
+      }
+
+
+
+
+      .map-container {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+      }
+
+      .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+
+      #cards{
+          margin-top: 5%;
+      }
+
+      @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+.bg-iconnav {
+  background: #f0323d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f0323d 0%, #e6366c 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f0323d 0%, #e6366c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f0323d 0%, #e6366c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0323d', endColorstr='#e6366c', GradientType=0);
+  /* IE6-9 */
+  border-radius: 0;
+  padding: 10px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+
+  </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;">OVEJA NEGRA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ovej Negra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+             <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" th:href="@{/cliente}">Registro</a>
+                          </li>
+                          <li class="nav-item">
+                             <a class="nav-link" th:href="@{/chat}">Chat Global</a>
+                          </li>
+                          <li class="nav-item">
+                             <a class="nav-link" th:href="@{/galeria}">Galeria de Tatuajes</a>
+                          </li>
+                          <li class="nav-item">
+                             <a class="nav-link" th:href="@{/auth/cita}">Pedir Cita</a>
+                          </li>
+                          <li class="nav-item">
+                             <a class="nav-link" th:href="@{/public/tienda}">Tienda</a>
+                          </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/public/miscompras}">Mis Compras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/app/carrito}">Mi Carrito</a>
+              </li>
+              <li  class="dropdown"><a
+                href="#" class="dropdown-toggle" data-toggle="dropdown"
+                role="button" aria-haspopup="true" aria-expanded="false">
+                <span th:if="${session.usuario != null}"
+                    th:text="${session.usuario.nombre}">Menú</span> <span class="caret">
+                    </span>
+            </a>
+                <ul class="dropdown-menu">
+                    <li><a
+                        href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
+                    </li>
+                </ul></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+        <img th:src="@{/img/tienda.jpg}" src="../img/tienda.jpg" class="d-block w-100" alt="...">
+    </section>
+
+
+    <section id="cards">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" th:each="producto : ${productos}">
+                  <div class="card h-100">
+                    <img id="zoom" src="http://placehold.it/350x260"
+                    th:src="${#strings.isEmpty(producto.imagen)} ? 'http://placehold.it/350x260' : ${producto.imagen}" class="card-img-top">
+                    <div class="card-body">
+                    <a th:href="@{/public/producto/{id}(id=${producto.id})}"
+						style="display: none"></a>
+                        <div class="panel-heading">
+                            <h5 th:text="${producto.nombre}" class="card-title">NOMBRE DEL PRODUCTO</h5>
+                        </div>
+                      <p class="card-text">
+                       <span class="descripcion"
+                       	th:text="${producto.descripcion}"></span>
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+							<div class="col-md-6 precio">
+								<span class="precio"
+									th:text="${#numbers.formatCurrency(producto.precio)}"></span>
+							</div>
+							<div class="col-md-6">
+								<a th:href="@{/app/carrito/add/{id}(id=${producto.id})}" class="pull-right btn btn-success btn-product"><span
+									class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Comprar</a>
+							</div>
+						</div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+
+
+
+
+        </div>
+    </section>
+
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA37KIg2Fg69FrcOhyFDJVn5Qr8Vet-58&callback=initMap"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script src="/js/popper.js" th:src="@{/js/popper.js}"></script>
+    <script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+    <script src="/js/main2.js" th:src="@{/js/main2.js}"></script>
+
+
+
+
+  </body>
+</html>

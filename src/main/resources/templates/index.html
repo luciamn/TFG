@@ -1,0 +1,887 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="http://fonts.cdnfonts.com/css/with-my-woes" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+
+<!--Peronal Carrousel-->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'> <link href="/css/personal.css" rel="stylesheet"/>
+<!--galeria inicio-->
+
+<link href="/css/galeriaInicio.css" rel="stylesheet"/>
+
+
+
+
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+        body{
+            background-color: #1a1a1a;
+        }
+
+        video{
+            margin-top: 10px;
+            height: 600px;
+            width: auto;
+
+        }
+        header.masthead {
+        background: #1a1a1a;
+        background-attachment: scroll;
+        background-size: cover;
+    }
+ header.masthead h1, header.masthead .h1 {
+    font-size: 2.25rem;
+}
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header.masthead h1, header.masthead .h1 {
+    font-size: 3.5rem;
+  }
+}
+
+    #caja{
+    position:absolute;
+    left: 8%;
+    bottom: -15px;
+    color: yellow;
+    font-family: "With My Woes", Sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2%;
+}
+
+ @media screen and (min-width: 1580px){
+           #caja{
+            left: 210px;
+            bottom: 70px;
+           }
+
+          video{
+              top: -25px;
+              height: auto;
+          }
+
+
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+}
+
+#ovejaimg{
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    width: 10%;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('images/pageLoader.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+
+#pageloader-overlay {
+            opacity: 0;
+            top: 0px;
+            left: 0px;
+            position: fixed;
+            background-color: rgba(255, 255, 255);
+            height: 100%;
+            width: 100%;
+            z-index: 9998;
+            -webkit-transition: opacity 0.5s linear;
+            -moz-transition: opacity 0.5s linear;
+            transition: opacity 0.5s linear;
+        }
+
+        #pageloader-overlay.visible {
+            opacity: 1;
+        }
+
+        #pageloader-overlay.hidden {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            z-index: -10000;
+        }
+
+        #pageloader-overlay .loader-wrapper-outer {
+            background-color: transparent;
+            z-index: 9999;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: table;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #pageloader-overlay .loader-wrapper-inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #o{
+            font-family: 'Square Peg', cursive;
+            font-size: 40px;
+            line-height: 30px;
+            color: whitesmoke;
+        }
+ #map {
+	height: 500px;
+	width: 100%;
+}
+
+
+h1{
+    font-family: 'Square Peg', cursive;
+            font-size: 40px;
+            line-height: 30px;
+            color: whitesmoke;
+}
+
+
+
+.nav-link{
+    color: white;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+ion-icon{
+    position: relative;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+
+.side-bar{
+          background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(15px);
+           width: 390px;
+           height: 100vh;
+           position: fixed;
+           top: 0;
+           right: -100%;
+           overflow-y: auto;
+           transition: 0.6s ease;
+           transition-property: right;
+           z-index: 1;
+        }
+
+        .side-bar .menu{
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        .side-bar .menu .item{
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .side-bar .menu .item a{
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            padding: 5px 30px;
+            line-height: 60px;
+
+        }
+
+        .side-bar .menu .item a:hover{
+            background: #8621F8;
+            transition: 0.3s ease;
+        }
+
+        .close-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            right: 0;
+            margin: 25px;
+            margin-right: 90%;
+            cursor: pointer;
+        }
+
+        .menu-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            margin: 25px;
+            cursor: pointer;
+            margin-left: 88%;
+        }
+
+        .side-bar.active{
+            right: 0;
+        }
+
+        @media screen and (min-width: 1580px){
+            .menu-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            margin: 25px;
+            cursor: pointer;
+            margin-left: 96%;
+        }
+          }
+
+
+
+        #welcome{
+            background: #fff;
+            height: 70vh;
+        }
+
+        #tituloWelcome{
+            text-align: center;
+            color: #1a1a1a;
+            padding: 2%;
+        }
+
+        #personal{
+           margin-top: 3%;
+        }
+
+
+        #tituloImg{
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+            width: 10%;
+            margin-left: 43%;
+            bottom: 10px;
+        }
+
+
+        #cita{
+            background-color: #fff;
+            height: 20vh;
+
+        }
+
+        #ovejaimg2{
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+            width: 10%;
+            margin-left: 43%;
+            margin-bottom: 3%;
+            margin-top: 2%;
+        }
+
+        #bCita{
+          margin-top: -20px;
+        }
+
+        #map{
+             height: 320px;
+        }
+
+
+        .card { border-radius: .7rem; }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="pageloader-overlay" class="visible incoming">
+        <div class="loader-wrapper-outer">
+            <div class="loader-wrapper-inner">
+                <div class="text-center new-loading-modal">
+                    <img th:src="@{/img/oveja_negra.webp}" src="../img/oveja_negra.webp" id="ovejaimg" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <span th:if="${session.usuario == null}">
+        <header class="masthead">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center d-flex">
+                    <div class="col-12">
+
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                                                    <div class="container-fluid">
+                                                      <p id="o">OVEJA NEGRA</p>
+                                                        <div class="menu-btn">
+                                                            <i class="fas fa-bars"></i>
+                                                        </div>
+
+                                                       <div class="side-bar">
+                                                        <div class="close-btn">
+                                                            <i class="fas fa-times"> </i>
+                                                        </div>
+                                                           <div class="menu">
+                                                               <div class="item"><a th:href="@{/}">Home</i></a></div>
+                                                                   <div class="item"><a th:href="@{/cliente}">Registro</i></a></div>
+                                                                   <div class="item"><a th:href="@{/chat}">Chat Global</i></a></div>
+                                                                   <div class="item"><a th:href="@{/galeria}">Galeria de Tatuajes</i></a></div>
+                                                                   <div class="item"><a th:href="@{/estudio}">El estudio</i></a></div>
+                                                                    <div class="item"><a th:href="@{/auth/cita}">Pedir Cita</i></a></div>
+                                                                    <div class="item"><a th:href="@{/public/tienda}">Tienda</i></a></div>
+                                                           </div>
+                                                       </div>
+
+
+
+
+                                                      </div>
+                                                    </div>
+                                                  </nav>
+
+
+                      </div>
+
+                      <div class="col-12 justify-content-center">
+                       <video class="col-12" muted autoplay loop>
+                           <source th:src="@{/img/CINEMATIC TATTOO STUDIO _ HANDHELD B ROLL _ (video-converter.com).webm}" src="../img/CINEMATIC TATTOO STUDIO _ HANDHELD B ROLL _ (video-converter.com).webm">
+                       </video>
+                      </div>
+
+                      <div class="d-none d-sm-none d-md-block col-lg-4 col-md-6 col-sm-12 col-xs-12" id="caja">
+                            <p>WE ARE AN ARTISTIC
+                                <br>
+                                COLLECTIVE MADE UP OF
+                                <br>
+                                MASTERS OF TATTOOING
+                            </p>
+                      </div>
+                </div>
+            </div>
+        </header>
+
+        </span>
+
+        <span th:if="${session.usuario != null}">
+            <header class="masthead">
+
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center d-flex">
+                                <div class="col-12">
+
+                                    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                                                                                              <div class="container-fluid">
+                                                                                                <p id="o">OVEJA NEGRA</p>
+                                                                                                  <div class="menu-btn">
+                                                                                                      <i class="fas fa-bars"></i>
+                                                                                                  </div>
+                                                                                                 <div class="side-bar">
+                                                                                                  <div class="close-btn">
+                                                                                                      <i class="fas fa-times"> </i>
+                                                                                                  </div>
+                                                                                                     <div class="menu">
+                                                                                                        <div class="item">
+                                                                                                               <ul class="navbar-nav">
+                                                                                                                   <li class="nav-item dropdown">
+                                                                                                                       <a th:text="${session.usuario.nombre}" class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                                                       </a>
+                                                                                                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                                                                                                    <li><a class="dropdown-item" th:href="@{/miCita/{id}(id=${session.usuario.id})}">Mi cita</a></li>
+                                                                                                                    <li><a class="dropdown-item" th:href="@{/app/miscompras}">Mis compras</a></li>
+                                                                                                                    <li><a class="dropdown-item"th:href="@{/logout}">Cerrar sesion</a></li>
+                                                                                                                    </ul>
+                                                                                                                   </li>
+                                                                                                               </ul>
+                                                                                                        </div>
+
+                                                                                                         <div class="item"><a th:href="@{/}">Home</i></a></div>
+                                                                                                         <div class="item"><a th:href="@{/chat}">Chat Global</i></a></div>
+                                                                                                          <div class="item"><a th:href="@{/galeria}">Galeria de Tatuajes</i></a></div>
+                                                                                                          <div class="item"><a th:href="@{/estudio}">El estudio</i></a></div>
+                                                                                                          <div class="item"><a th:href="@{/auth/cita}">Pedir Cita</i></a></div>
+                                                                                                          <div class="item"><a th:href="@{/public/tienda}">Tienda</i></a></div>
+
+                                                                                                     </div>
+                                                                                                 </div>
+
+
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </nav>
+
+
+                                  </div>
+
+                                  <div class="col-12 justify-content-center">
+                                   <video class="col-12" muted autoplay loop>
+                                       <source th:src="@{/img/CINEMATIC TATTOO STUDIO _ HANDHELD B ROLL _ (video-converter.com).webm}" src="../img/CINEMATIC TATTOO STUDIO _ HANDHELD B ROLL _ (video-converter.com).webm">
+                                   </video>
+                                  </div>
+
+                                  <div class="d-none d-sm-none d-md-block col-lg-4 col-md-6 col-sm-12 col-xs-12" id="caja">
+                                        <p>WE ARE AN ARTISTIC
+                                            <br>
+                                            COLLECTIVE MADE UP OF
+                                            <br>
+                                            MASTERS OF TATTOOING
+                                        </p>
+                                  </div>
+                            </div>
+                        </div>
+                    </header>
+        </span>
+
+        <section id="welcome">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       <img id="ovejaimg2" th:src="@{/img/oveja_negra.webp}" src="../img/oveja_negra.webp">
+                    </div>
+                    <div class="col-12" style="text-align:center;">
+                    <p style="color:gray;">Estudio de Tatujes en Madrid</p>
+                    <h3><b>¿Estas buscando un estudio donde tatuarte?</b></h3>
+                    <p>En Oveja Negra somos un equipo que se especializa en tatuajes personalizados y de calidad en diferentes estilos, como tatuaje estilo Blackwork, tatuajes en realismo, tatuajes en estilo Japones, estilo oldSchool y tambien estilo cartoon ya sea un diseño pequeño, mediano o grande, contamos con artistas tatuadores profesionales con años de experiencia te ayuden a dar a tu tatuaje una idea única.</p>
+                    <p></p>
+                    </div>
+                      <div class="col-12 d-flex justify-content-center mb-5">
+                                           <a th:href="@{/estudio}" id="estudio" class="btn btn-outline-dark waves-effect filter col-lg-2 col-xs-12">
+                                             Ir al Estudio
+                                             </a>
+                                         </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section>
+                   <div class="container-fluid">
+                       <div class="row">
+                         <div class="column">
+                           <img th:src="@{/img/15.webp}" src="../../img/15.webp"/>
+                           <img th:src="@{/img/18.jpeg}" src="../img/18.jpeg"/>
+
+                         </div>
+                         <div class="column">
+                           <img th:src="@{/img/17.jpeg}" src="../img/17.jpeg"/>
+
+
+                         </div>
+                         <div class="column">
+                           <img th:src="@{/img/21.webp}" src="../img/21.webp"/>
+                           <img th:src="@{/img/19.jpeg}" src="../img/19.jpeg">
+
+                         </div>
+                       </div>
+                     </div>
+               </section>
+
+
+
+                <section id="cita">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-12 d-flex justify-content-center mb-5">
+                                    <h1 style="color: black; margin-top: 2%;">¿Quieres tatuarte con nosotros?</h1>
+                                  </div>
+                                  <div class="col-12 d-flex justify-content-center mb-5" id="bCita">
+                                    <a th:href="@{/auth/cita}" class="btn btn-outline-dark waves-effect filter col-md-3" >
+                                        <i class="fa fa-calendar"></i> Pide Cita
+                                    </a>
+                                  </div>
+
+                              </div>
+
+
+                          </div>
+                      </section>
+
+
+
+      <section id="personal">
+              <div class="gtco-testimonials">
+                  <h1 id="tituloPersonal">NUESTROS ARTISTAS</h1>
+                  <div class="owl-carousel owl-carousel1 owl-theme">
+                    <div>
+                      <div class="card text-center"><img class="card-img-top" src="https://i2.wp.com/lamiradafotografia.es/wp-content/uploads/2014/07/foto-perfil-psicologo-180x180.jpg?resize=180%2C180" alt="">
+                        <div class="card-body">
+                          <h5>Alvaro  <br />
+                            <span> Tatuador </span>
+                          </h5>
+                            <p class="card-text">“ Especialistas en tatuajes estilo Blackwork, sus trabajos se caracterizan por
+                               integrar puntillismo de arrastre y simulación de sombreado” </p>
+                      </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="card text-center"><img class="card-img-top" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=11" alt="">
+                        <div class="card-body">
+                          <h5>Lola<br />
+                            <span> Tatuadora </span>
+                          </h5>
+                          <p class="card-text">“ Especilistas en tatuajes realistas, sus tatuajes se caracterizan por
+                            el alto detalle y las líneas finas” </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="card text-center"><img class="card-img-top" src="https://images.pexels.com/photos/157661/young-woman-shooting-model-157661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        <div class="card-body">
+                          <h5>Maria<br />
+                            <span> Tatuadora </span>
+                          </h5>
+                          <p class="card-text">“ Especilista en tatuajes oldSchool, sus tatuajes se caracterizan por
+                               ser anchos y tener mucho color ” </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="card text-center"><img class="card-img-top" src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        <div class="card-body">
+                          <h5>Julian<br />
+                            <span> Tatuador </span>
+                          </h5>
+                          <p class="card-text">“ Especilista en tatuajes estilo Japones, sus tatuajes se caracterizan por
+                              ser muy simbolicos ” </p>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div>
+                     <div class="card text-center"><img class="card-img-top" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                                                                  <div class="card-body">
+                                                                    <h5>Jose<br />
+                                                                      <span> Tatuador </span>
+                                                                    </h5>
+                                                                   <p class="card-text">“ Especilista en tatuajes estilo Japones, sus tatuajes se caracterizan por
+                                                                                           su gran cantidad de color y las superposiciones de tono y los relieves y profundidades ” </p>
+                                                                  </div>
+                                                                </div>
+                                        </div>
+                  </div>
+                </div>
+
+            </section>
+
+            <section id="cita">
+                                      <div class="container">
+                                          <div class="row">
+                                              <div class="col-12 d-flex justify-content-center mb-5">
+                                                <h1 style="color: black; margin-top: 2%;">¿Quieres comprar algun producto?</h1>
+                                              </div>
+                                              <div class="col-12 d-flex justify-content-center mb-5" id="bCita">
+                                                <a th:href="@{/public/tienda}" class="btn btn-outline-dark waves-effect filter col-md-3" >
+                                                    <i class="fa fa-shop"></i> Tienda
+                                                </a>
+                                              </div>
+
+                                          </div>
+
+
+                                      </div>
+                                  </section>
+
+            <!--section style="color: #000; background-color: #f3f2f2;">
+                    <div class="container py-5">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-md-10 col-xl-8 text-center">
+                          <h1 style="color: black; margin-top: 2%; margin-bottom: 2%;">RESEÑAS</h1>
+
+                        </div>
+                      </div>
+
+                      <div class="row text-center">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                          <div class="card">
+                            <div class="card-body py-4 mt-2">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+                              </div>
+                              <h5 class="font-weight-bold">Teresa May</h5>
+                              <ul class="list-unstyled d-flex justify-content-center">
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star-half-alt fa-sm text-warning"></i>
+                                </li>
+                              </ul>
+                              <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>Un trato increíble, llevo 3 tatuajes ya,
+                                 y no dudaré en volver a hacerme mas tatuajes aquí.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-4 mb-md-0">
+                          <div class="card">
+                            <div class="card-body py-4 mt-2">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+                              </div>
+                              <h5 class="font-weight-bold">Maggie McLoan</h5>
+                              <ul class="list-unstyled d-flex justify-content-center">
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                              </ul>
+                              <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>Mi primera experiencia en el mundo del tattoo y salí con ganas de más. A pesar del mínimo dolor que puedan causar las agujas, y en mi caso pánico,
+                                 tuvo mucha delicadeza.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-0">
+                          <div class="card">
+                            <div class="card-body py-4 mt-2">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+                              </div>
+                              <h5 class="font-weight-bold">Alexa Horwitz</h5>
+                              <ul class="list-unstyled d-flex justify-content-center">
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="fas fa-star-half-stroke fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="far fa-star fa-sm text-warning"></i>
+                                </li>
+                                <li>
+                                  <i class="far fa-star fa-sm text-warning"></i>
+                                </li>
+                              </ul>
+                              <p class="mb-2">
+                                <i class="fas fa-quote-left pe-2"></i>Buen estudio, buena atención al cliente,
+                                pero son caros.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>-->
+
+
+
+                <!-- Footer -->
+            <footer class="bg-transparent text-center text-white">
+            <hr>
+              <!-- Grid container -->
+              <div class="container p-4">
+                <!-- Section: Social media -->
+
+                <!-- Section: Text -->
+
+                <!-- Section: Links -->
+                <section class="">
+                  <!--Grid row-->
+                  <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                      <h5 class="text-uppercase">Horario</h5>
+                      <p>
+                       Lunes - Viernes <br>
+                       09:30h - 19:00h <br>
+                      </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                      <h5 class="text-uppercase">Oveja Negra</h5>
+                      <p>
+                       Estudio de Tatuajes en Madrid <br>
+
+                       San Blas, Madrid
+                      </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 class="text-uppercase">Acceso rapido</h5>
+
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a th:href="@{/galeria}" class="text-white">Galeria de Tatuajes</a>
+                        </li>
+                        <li>
+                          <a th:href="@{/cliente}" class="text-white">Registro</a>
+                        </li>
+
+                        <li>
+                          <a th:href="@{/auth/cita}" class="text-white">Pedir Cita</a>
+                        </li>
+                        <li>
+                          <a th:href="@{/estudio}" class="text-white">El Estudio</a>
+                        </li>
+                        <li>
+                          <a th:href="@{/public/tienda}" class="text-white">Tienda</a>
+                        </li>
+                        <li>
+                          <a th:href="@{/chat}" class="text-white">Chat Global</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 class="text-uppercase">Contacto</h5>
+
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="mailto:oveja.negra.sl.22@gmail.com" class="text-white">@OvejaNegra</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!--Grid column-->
+                  </div>
+                  <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+              </div>
+              <!-- Grid container -->
+
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-white"></a>
+              </div>
+              <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+
+
+
+      <!--personal js-->
+      <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+      <script src="/js/personal.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).on("ready",function(){
+                $(window).on('load', function(){
+                    $('#pageloader-overlay').fadeOut(2000);
+                });
+            });
+            </script>
+
+            <script>
+               function initMap(){
+        var coordenadas = {lat: 40.421932 ,lng: -3.616656};
+        var map = new google.maps.Map(document.getElementById('map'),{
+          zoom: 10,
+          center: coordenadas
+        });
+        var marker = new google.maps.Marker({
+          position: coordenadas,
+          map: map
+        });
+    }
+
+            </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA37KIg2Fg69FrcOhyFDJVn5Qr8Vet-58&callback=initMap"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <script type="text/javascript">
+        $('.menu-btn').click(function(){
+            $('.side-bar').addClass('active');
+            $('.menu-btn').css("visibility", "hidden");
+        });
+
+        $('.close-btn').click(function(){
+            $('.side-bar').removeClass('active');
+            $('.menu-btn').css("visibility", "visible");
+        });
+
+
+
+    </script>
+
+  </body>
+</html>

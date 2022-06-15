@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v6 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link href="http://fonts.cdnfonts.com/css/with-my-woes" rel="stylesheet">
+
+
+		<!-- STYLE CSS -->
+        <link href="/css/cita.css" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <script>
+
+
+    </script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<div class="image-holder">
+                     <img th:src="@{/img/1.jpeg}" src="../img/1.jpeg">
+				</div>
+				<form id="formulario" th:action="@{/auth/cita}" th:object="${cita}" method="POST" enctype="multipart/form-data">
+					<h1>GESTION DE CITAS</h1>
+
+					<div class="form-row">
+                    	 <input name="zonaDelCuerpo" id="zonaDelCuerpo" type="text" class="form-control" placeholder="Parte del Cuerpo" field="*{zonaDelCuerpo}">
+                         <input name="tamano" id="tamano" type="number" class="form-control" placeholder="Tamaño" field="*{tamano}" >
+                         </div>
+					<div class="form-row">
+					    <input id="timeInAdd" name="fecha" type="date" class="form-control" placeholder="Fecha" required>
+                        <input id='timeInAddHora' name="hora" type="time" class="form-control" placeholder="Hora" required>
+                    </div>
+					<div class="form-row">
+						<div class="form-holder" style="width: 100%;">
+							<select name="tipo" id="tipo" class="form-control" field="*{tipo}" required>
+								<option value="" disabled selected>Tipo de Tatuaje</option>
+								<option value="realista">Realista</option>
+								<option value="oldSchool">OldSchool</option>
+								<option value="blackwork">Blackwork</option>
+								<option value="cartoon">Cartoon</option>
+								<option value="japones">Japones</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+					</div>
+
+					<textarea name="descripcion" id="descripcion" placeholder="Descripcion" class="form-control" field="*{descripcion}" style="height: 130px; margin-bottom:2%"></textarea>
+					<div class="form-row">
+						<div class="form-holder" style="width: 100%;">
+							<input id="filebutton"  name="file" class="form-control" type="file" style="margin-bottom:2%">
+						</div>
+					</div>
+
+
+					<input type="submit" id='btn-enviar' class="form-control2 btn btn-primary submit px-3" value="Sign In">
+
+					<div class="form-group d-md-flex">
+						<div class="w-100" style="text-align: center; padding:2%;">
+							<a th:href="@{/cliente}" style="color: #fff">Para planificar una cita debe de estar registrado</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="/js/validacionCitas.js"></script>
+	</body>
+</html>

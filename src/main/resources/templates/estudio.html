@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/estudio.css">
+
+    <link rel="stylesheet" href="css/carousel.css">
+
+
+    <link href="http://fonts.cdnfonts.com/css/with-my-woes" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    <title>El Estudio ON</title>
+  </head>
+  <body>
+
+
+    <nav class="navbar bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">OVEJA NEGRA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Oveja Negra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/cliente}">Registro</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" th:href="@{/chat}">Chat Global</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" th:href="@{/galeria}">Galeria de Tatuajes</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" th:href="@{/auth/cita}">Pedir Cita</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" th:href="@{/public/tienda}">Tienda</a>
+              </li>
+              <li>
+                 <a th:href="@{/estudio}" class="text-white">El Estudio</a>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+  <section>
+    <img th:src="@{/img/estudio.jpg}" src="../img/estudio.jpg" class="d-block w-100" alt="...">
+  </section>
+
+  <div class="content">
+    <div class="site-section bg-left-half mb-5">
+      <div class="container owl-2-style">
+
+        <div class="owl-carousel owl-2">
+          <div class="media-29101">
+            <a href="#"><img th:src="@{/img/e1.jpg}" src="../img/e1.jpg" alt="Image" class="img-fluid" style="max-width:100%; height: auto; border: none;"></a>
+          </div>
+          <div class="media-29101">
+             <a href="#"><img th:src="@{/img/e2.jpg}" src="../img/e2.jpg" alt="Image" class="img-fluid" style="max-width:100%; height: auto; border: none;"></a>
+          </div>
+          <div class="media-29101">
+             <a href="#"><img th:src="@{/img/e3.jpg}" src="../img/e3.jpg" alt="Image" class="img-fluid" style="max-width:100%; height: auto; border: none;"></a>
+          </div>
+          <div class="media-29101">
+            <a href="#"><img th:src="@{/img/e4.jpg}" src="../img/e4.jpg" alt="Image" class="img-fluid" style="max-width:100%; height: auto; border: none;"></a>
+          </div>
+          <div class="media-29101">
+            <a href="#"><img th:src="@{/img/e5.jpg}" src="../img/e5.jpg" alt="Image" class="img-fluid" style="max-width:100%; height: auto; border: none;"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <section id="info">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="card">
+
+              <div class="row">
+                <div class="col-md-6">
+
+                  <div id="map-within-card-2" class="map-container rounded-left" style="height: 400px">
+                      <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=28037,%20San%20blas%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      frameborder="0" style="border:0" allowfullscree></iframe>
+                  </div>
+
+                </div>
+
+                <div class="col-10 col-md-4 mx-auto align-self-center py-4">
+
+                  <h6 class="font-weight-bold grey-text text-uppercase small">Oveja Negra</h6>
+                  <h5 class="font-weight-normal mb-4">Madrid, ESP</h5>
+                  <p class="text-muted font-weight-light">228037, Madrid<br>Calle de Capri</p>
+                  <p class="text-muted font-weight-light mb-0">Phone: +1 987 123 6548<br>Email: oveja.negra.sl.22@gmail.com</p>
+
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+</section>
+ <footer class="bg-dark text-center text-white">
+             <hr>
+               <!-- Grid container -->
+               <div class="container p-4">
+                 <!-- Section: Social media -->
+
+                 <!-- Section: Text -->
+
+                 <!-- Section: Links -->
+                 <section class="">
+                   <!--Grid row-->
+                   <div class="row">
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Horario</h5>
+                       <p>
+                        Lunes - Viernes <br>
+                        09:30h - 19:00h <br>
+                       </p>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Oveja Negra</h5>
+                       <p>
+                        Estudio de Tatuajes en Madrid <br>
+
+                        San Blas, Madrid
+                       </p>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Acceso rapido</h5>
+
+                       <ul class="list-unstyled mb-0">
+                         <li>
+                           <a th:href="@{/galeria}" class="text-white">Galeria de Tatuajes</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/cliente}" class="text-white">Registro</a>
+                         </li>
+
+                         <li>
+                           <a th:href="@{/auth/cita}" class="text-white">Pedir Cita</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/estudio}" class="text-white">El Estudio</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/public/tienda}" class="text-white">Tienda</a>
+                         </li>
+                         <li>
+                           <a th:href="@{/chat}" class="text-white">Chat Global</a>
+                         </li>
+                       </ul>
+                     </div>
+                     <!--Grid column-->
+
+                     <!--Grid column-->
+                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                       <h5 class="text-uppercase">Contacto</h5>
+
+                       <ul class="list-unstyled mb-0">
+                         <li>
+                           <a href="mailto:oveja.negra.sl.22@gmail.com" class="text-white">@OvejaNegra</a>
+                         </li>
+                       </ul>
+                     </div>
+                     <!--Grid column-->
+                   </div>
+                   <!--Grid row-->
+                 </section>
+                 <!-- Section: Links -->
+               </div>
+               <!-- Grid container -->
+
+               <!-- Copyright -->
+               <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                 © 2020 Copyright:
+                 <a class="text-white"></a>
+               </div>
+               <!-- Copyright -->
+             </footer>
+
+  <script type="text/javascript">
+    $(document).on("ready",function(){
+        $(window).on('load', function(){
+            $('#pageloader-overlay').fadeOut(2000);
+        });
+    });
+    </script>
+
+    <script>
+       function initMap(){
+var coordenadas = {lat: 40.421932 ,lng: -3.616656};
+var map = new google.maps.Map(document.getElementById('map'),{
+  zoom: 10,
+  center: coordenadas
+});
+var marker = new google.maps.Marker({
+  position: coordenadas,
+  map: map
+});
+}
+
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          $('.owl-carousel').owlCarousel();
+        });
+    </script>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA37KIg2Fg69FrcOhyFDJVn5Qr8Vet-58&callback=initMap"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script src="/js/popper.js" th:src="@{/js/popper.js}"></script>
+    <script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+    <script src="/js/main2.js" th:src="@{/js/main2.js}"></script>
+
+
+
+
+  </body>
+</html>
