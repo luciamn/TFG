@@ -14,10 +14,9 @@ rectangle Estudio_Tatuajes {
   usecase "Actualizar Citas" as UC4.2
 
   usecase "Gestionar la aplicación" as UC8
-  usecase "Gestionar Empleados" as UC9
   usecase "Actualizar Productos" as UC10.1
   usecase "Eliminar Productos" as UC10.2
-  usecase "Gestionar Productos" as UC10
+  usecase "Gestionar Tienda" as UC10
 }
 c --> UC1
 c --> UC2
@@ -33,7 +32,6 @@ UC4 <-- UC4.2
 
 
 a --> UC8
-a --> UC9
 a --> UC10
 
 UC10 <-- UC10.1
